@@ -4,11 +4,16 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Progi_Test.Application</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Features\Vehicle\Commands\" />
       <Folder Include="Interfaces\" />
-      <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Progi_Test.Domain\Progi_Test.Domain.csproj" />
     </ItemGroup>
 
 </Project>
