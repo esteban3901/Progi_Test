@@ -3,7 +3,10 @@ using Progi_Test.Application;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationDependencies();
-
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
 
 // Add services to the container.
 
@@ -24,6 +27,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
 

@@ -5,7 +5,7 @@ using Progi_Test.Application.Features.Vehicle.Queries.GetVehicleInformation;
 namespace Progi_Test_API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class VehicleController : ControllerBase
 {
     private readonly IMediator _mediator;
