@@ -1,4 +1,9 @@
+using Progi_Test.Application;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddApplicationDependencies();
+
 
 // Add services to the container.
 

@@ -1,9 +1,10 @@
+using Progi_Test.Application.Interfaces;
 using Progi_Test.Domain.Entities;
 using Progi_Test.Domain.Enums;
 
 namespace Progi_Test.Application.Services;
 
-public class FeeService
+public class FeeService : IFeeService
 {
     public async Task<List<Fee>> CalculateFees(Vehicle vehicle)
     {
