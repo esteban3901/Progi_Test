@@ -1,6 +1,6 @@
 # progi_test_front
 
-This template should help get you started developing with Vue 3 in Vite.
+This little webapp shows the information about the cars buyed in an auction.
 
 ## Recommended IDE Setup
 
