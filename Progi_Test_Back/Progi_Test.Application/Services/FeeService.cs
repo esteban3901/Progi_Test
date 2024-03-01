@@ -17,8 +17,7 @@ public class FeeService : IFeeService
                 FeeType.Basic => await CalculateBasicFee(vehicle.Type, vehicle.BasePrice),
                 FeeType.Special => await CalculateSpecialFee(vehicle.Type, vehicle.BasePrice),
                 FeeType.Association => await CalculateAssociationFee(vehicle.BasePrice),
-                FeeType.Storage => new Fee { FeeType = FeeType.Storage, Value = 100 },
-                _ => null
+                FeeType.Storage => new Fee { FeeType = FeeType.Storage, Value = 100 }
             };
             fees.Add(fee!);
         }
@@ -33,8 +32,7 @@ public class FeeService : IFeeService
         (minFee, maxFee) = type switch
         {
             VehicleType.Common => (10, 50),
-            VehicleType.Luxury => (25, 200),
-            _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+            VehicleType.Luxury => (25, 200)
         };
 
         var feeValue = basePrice * 10 / 100;
@@ -48,8 +46,7 @@ public class FeeService : IFeeService
         var specialFee = type switch
         {
             VehicleType.Common => basePrice * 2 / 100,
-            VehicleType.Luxury => basePrice * 4 / 100,
-            _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+            VehicleType.Luxury => basePrice * 4 / 100
         };
         return Task.FromResult(new Fee { FeeType = FeeType.Special, Value = specialFee });
     }
